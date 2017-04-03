@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<html>
+    <head>
+        
+             
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" type="text/css">
+
+
+    <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+        <style>
+        
+            a {
+                color: black;
+            }
+            
+        </style>
+        
+        
+        
+    </head>
+<body style="font-family:sans-serif">
+    <br><br>
+    
+<center><h3>Select the name of the student who is voting right now</h3></center>
+    
+    <br>
+<center>
+    <table class="bordered">
+        <col style="width:25%">
+        <col style="width:25%">
+        <tbody>
+        <tr>
+            <th><b><center>Name</center></b></th>
+            <th><b><center>Class</center></b></th>
+        </tr>
+        </tbody>
+</table>
+    </center>
+        {% for voter in voters %}
+        <center>
+    <table class="highlight">
+        <col style="width:25%">
+        <col style="width:25%">
+        <tbody>
+        <tr>
+            <td><center><a href="/set?voter={{ voter }}&house={{ house }}"> {{ voter }}</a></center></td>
+            <td><center>{{ class }}</center></td>
+        </tr>
+        </tbody>
+</table>
+    </center>
+
+{% endfor %}
+</body>
+</html>
